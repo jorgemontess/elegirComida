@@ -1,71 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="numeroAleatorio.js"></script>
+
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
     
+
     <title>Document</title>
 
-   
 
-    
+
+
     <!-- CSS only -->
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
 
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
- 
+
+    <!--SweetAlert Plugins-->
+    <link rel="stylesheet" href="plugins/sweetAlert2/sweetalert2.min.css">  
+
+
+
 </head>
+
 <body>
 
-    <div class="box">
-        <h2>Elegir Comidas</h2>
-    
+    <div class="container">
 
-    <form >
+        <div class="box">
+            <h2>Elegir Comidas</h2>
 
-        <!--Comida 1-->
-        <div>
-            <input type="text" id="comida1" required>
-            <label for="">Comida</label>
+
+
+
+            <div class="selector">
+                <label for="numeroComidas">Cuantas comidas desea poner</label><br>
+                <select name="numeroComidas" id="numeroComidas" onclick="mostrarOcultar()">
+                    <option value="@">---</option>
+                    <option value="2" id="2">l 2 l</option>
+                    <option value="3">l 3 l</option>
+                    <option value="4">l 4 l</option>
+                    <option value="5">l 5 l</option>
+                </select>
+
+            </div>
+
+
+            <form>
+
+                <!--Comida 1-->
+                <div id="c1">
+                    <input type="text" id="comida1" required>
+                    <label for="">Comida</label>
+                </div>
+
+                <!--Comida 2-->
+                <div id="c2">
+                    <input type="text" id="comida2" required>
+                    <label for="">Comida</label>
+                </div>
+
+                <!--Comida 3-->
+                <div id="c3">
+                    <input type="text" id="comida3" required>
+                    <label for="">Comida</label>
+                </div>
+
+                <!--Comida 4-->
+                <div id="c4">
+                    <input type="text" id="comida4" required>
+                    <label for="">Comida</label>
+                </div>
+
+                <!--Comida 5-->
+                <div id="c5">
+                    <input type="text" id="comida5" required>
+                    <label for="">Comida</label>
+                </div>
+
+                <center>
+                    <div>
+                        <button type="button" class="btn btn-outline-light" onclick="Aleatorio()">Generar
+                            comida</button>
+                    </div>
+                </center>
+
+            </form>
         </div>
 
-        <!--Comida 2-->
-        <div>
-            <input type="text" id="comida2" required>
-            <label for="">Comida</label>
-        </div>
+    </div>
 
-        <!--Comida 3-->
-        <div>
-            <input type="text" id="comida3" required>
-            <label for="">Comida</label>
-        </div>
 
-        <!--Comida 4-->
-        <div>
-            <input type="text" id="comida4" required>
-            <label for="">Comida</label>
-        </div>
 
-        <!--Comida 5-->
-        <div>
-            <input type="text" id="comida5" required>
-            <label for="">Comida</label>
-        </div>
+    <script src="jquery/jquery-3.3.1.min.js"></script>	 	
+    <script src="popper/popper.min.js"></script>	 	 	
+    <script src="bootstrap4/js/bootstrap.min.js"></script>
 
-        <center>
-        <div>
-        <button type="button" class="btn btn-outline-light" onclick="Aleatorio()" >Generar comida</button>
-        </div>
-        </center>
+    <!--    Plugin sweet Alert 2  -->
+	<script src="plugins/sweetAlert2/sweetalert2.all.min.js"></script>
 
-    </form>
-</div>
+    <script src="numeroAleatorio.js"></script>
+   
 </body>
+
 </html>
