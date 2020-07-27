@@ -1,229 +1,273 @@
 
+window.onload = function myo()
+{
+    setTimeout(mostrarOcultar());
+}
+
+
+function mostrarOcultar() {
+    let obj = document.getElementById("numeroComidas").value;
+
+    switch (parseInt(obj)) {
+        case 2:
+
+
+
+            /* Muestra*/
+            document.getElementById("c1").style.display = "block";
+            document.getElementById("c2").style.display = "block";
+    
+            /* Oculta*/
+            document.getElementById("imagenInicio").style.display = "none";
+            document.getElementById("c3").style.display = "none";
+            document.getElementById("c4").style.display = "none";
+            document.getElementById("c5").style.display = "none";
+
+            
+
+
+
+            break;
+
+        case 3:
+
+            /* Muestra*/
+            document.getElementById("c1").style.display = "block";
+            document.getElementById("c2").style.display = "block";
+            document.getElementById("c3").style.display = "block";
+
+
+            /* Oculta*/
+            document.getElementById("imagenInicio").style.display = "none";
+            document.getElementById("c4").style.display = "none";
+            document.getElementById("c5").style.display = "none";
+
+            
+
+            break;
+
+        case 4:
+
+            /* Muestra*/
+            document.getElementById("c1").style.display = "block";
+            document.getElementById("c2").style.display = "block";
+            document.getElementById("c3").style.display = "block";
+            document.getElementById("c4").style.display = "block";
+
+            /* Oculta*/
+            document.getElementById("imagenInicio").style.display = "none";
+            document.getElementById("c5").style.display = "none";
+
+            
+
+            break;
+
+        case 5:
+
+
+            /* Muestra*/
+
+            document.getElementById("c1").style.display = "block";
+            document.getElementById("c2").style.display = "block";
+            document.getElementById("c3").style.display = "block";
+            document.getElementById("c4").style.display = "block";
+            document.getElementById("c5").style.display = "block";
+
+
+            /* Oculta*/
+            document.getElementById("imagenInicio").style.display = "none";
+
+
+            
+
+            break;
+
+        default:
+
+            /*Muestra */
+            document.getElementById("imagenInicio").style.display = "block";
+
+
+            /* Oculta*/
+            document.getElementById("c1").style.display = "none";
+            document.getElementById("c2").style.display = "none";
+            document.getElementById("c3").style.display = "none";
+            document.getElementById("c4").style.display = "none";
+            document.getElementById("c5").style.display = "none";
+            break;
+
+    }
+}
 
 
 function Aleatorio() {
 
-  
-  let comida1 = document.getElementById("comida1").value;
-  let comida2 = document.getElementById("comida2").value;
-  let comida3 = document.getElementById("comida3").value;
-  let comida4 = document.getElementById("comida4").value;
-  let comida5 = document.getElementById("comida5").value;
 
-  let obj = document.getElementById("numeroComidas").value;
+    let comida1 = document.getElementById("comida1").value;
+    let comida2 = document.getElementById("comida2").value;
+    let comida3 = document.getElementById("comida3").value;
+    let comida4 = document.getElementById("comida4").value;
+    let comida5 = document.getElementById("comida5").value;
 
- 
-  switch (parseInt(obj)) {
+    let obj = document.getElementById("numeroComidas").value;
 
 
-    case 2:
-      var numeroAleatorio = Math.round(Math.random() * 1) + 1;
-
-      console.log(numeroAleatorio);
-
-      if (numeroAleatorio == 1) {
+    var comi = new Alerta();
 
 
-        Swal.fire({
-          type: 'question',
-          title: 'Comida Aleatoria',
-          html: 'Su comida estará lista en:  <strong> </strong> segundos',
-          timer: 2000, //tiempo del timer
-          onBeforeOpen: () => {
-            Swal.showLoading()
-            timerInterval = setInterval(() => {
-              Swal.getContent().querySelector('strong')
-                .textContent = Swal.getTimerLeft()
-            }, 100)
-          },
-          onClose: () => {
-            clearInterval(timerInterval)
-          }
-        }).then((result) => {
-          if (
-            // Read more about handling dismissals
-            result.dismiss === Swal.DismissReason.timer
-          ) {
-            Swal.fire({        
-              type: 'success',
-              title: 'Listo!',
-              text: 'Hoy toca comer: ' + comida1,        
-          });
-          }
-        });    
-        
-        
+
+    switch (parseInt(obj)) {
 
 
-      } else if (numeroAleatorio == 2) {
-
-        Alerta();
-
-      }
-      break;
-
-    case 3:
-      var numeroAleatorio = Math.round(Math.random() * 2) + 1;
-
-      if (numeroAleatorio == 1) {
-        
-        Swal.fire({        
-          type: 'success',
-          title: 'Listo!',
-          text: 'Hoy toca comer: ' + comida1,        
-      });
-
-      } else if (numeroAleatorio == 2) {
-
-        Swal.fire({        
-          type: 'success',
-          title: 'Listo!',
-          text: 'Hoy toca comer: ' + comida2,        
-      });
-
-      } else if (numeroAleatorio == 3) {
+        case 2:
+            var numeroAleatorio = Math.round(Math.random() * 1) + 1;
 
 
-        Swal.fire({        
-          type: 'success',
-          title: 'Listo!',
-          text: 'Hoy toca comer: ' + comida3,        
-      });
 
-      }
-      break;
+            if (numeroAleatorio == 1) {
 
-    case 4:
-      var numeroAleatorio = Math.round(Math.random() * 3) + 1;
 
-      if (numeroAleatorio == 1) {
+                comi.setComida(comida1);
 
-        Swal.fire({        
-          type: 'success',
-          title: 'Listo!',
-          text: 'Hoy toca comer: ' + comida1,        
-      });
 
-      } else if (numeroAleatorio == 2) {
 
-        Swal.fire({        
-          type: 'success',
-          title: 'Listo!',
-          text: 'Hoy toca comer: ' + comida2,        
-      });
+            } else if (numeroAleatorio == 2) {
 
-      } else if (numeroAleatorio == 3) {
+                comi.setComida(comida2);
 
-        Swal.fire({        
-          type: 'success',
-          title: 'Listo!',
-          text: 'Hoy toca comer: ' + comida3,        
-      });
 
-      } else if (numeroAleatorio == 4) {
+            }
+            break;
 
-        Swal.fire({        
-          type: 'success',
-          title: 'Listo!',
-          text: 'Hoy toca comer: ' + comida4,        
-      });
+        case 3:
+            var numeroAleatorio = Math.round(Math.random() * 2) + 1;
 
-      }
+            console.log(numeroAleatorio);
 
-      break;
+            if (numeroAleatorio == 1) {
 
-    case 5:
-      var numeroAleatorio = Math.round(Math.random() * 4) + 1;
+                comi.setComida(comida1);
 
-      if (numeroAleatorio == 1) {
+            } else if (numeroAleatorio == 2) {
 
-        Swal.fire({        
-          type: 'success',
-          title: 'Listo!',
-          text: 'Hoy toca comer: ' + comida1,        
-      });
+                comi.setComida(comida2);
 
-      } else if (numeroAleatorio == 2) {
+            } else if (numeroAleatorio == 3) {
 
-        Swal.fire({        
-          type: 'success',
-          title: 'Listo!',
-          text: 'Hoy toca comer: ' + comida2,        
-      });
-      } else if (numeroAleatorio == 3) {
 
-        Swal.fire({        
-          type: 'success',
-          title: 'Listo!',
-          text: 'Hoy toca comer: ' + comida3,        
-      });
-      } else if (numeroAleatorio == 4) {
+                comi.setComida(comida3);
 
-        Swal.fire({        
-          type: 'success',
-          title: 'Listo!',
-          text: 'Hoy toca comer: ' + comida4,        
-      });
-        
-      } else if (numeroAleatorio == 5) {
-        
-        Swal.fire({        
-          type: 'success',
-          title: 'Listo!',
-          text: 'Hoy toca comer: ' + comida5,        
-      });
-      }
+            }
+            break;
 
-      break;
-  }
+        case 4:
+            var numeroAleatorio = Math.round(Math.random() * 3) + 1;
+
+            if (numeroAleatorio == 1) {
+
+                comi.setComida(comida1);
+
+            } else if (numeroAleatorio == 2) {
+
+                comi.setComida(comida2);
+
+            } else if (numeroAleatorio == 3) {
+
+                comi.setComida(comida3);
+
+            } else if (numeroAleatorio == 4) {
+
+                comi.setComida(comida4);
+
+            }
+
+            break;
+
+        case 5:
+            var numeroAleatorio = Math.round(Math.random() * 4) + 1;
+
+            console.log(numeroAleatorio);
+
+            if (numeroAleatorio == 1) {
+
+                comi.setComida(comida1);
+
+            } else if (numeroAleatorio == 2) {
+
+                comi.setComida(comida2);
+
+            } else if (numeroAleatorio == 3) {
+
+                comi.setComida(comida3);
+
+            } else if (numeroAleatorio == 4) {
+
+                comi.setComida(comida4);
+
+            } else if (numeroAleatorio == 5) {
+
+                comi.setComida(comida5);
+            }
+
+            break;
+    }
 }
 
 
 /* Funcion para mostrar y ocultar */
 
-function mostrarOcultar() {
-  let obj = document.getElementById("numeroComidas").value;
 
-  switch (parseInt(obj)) {
-    case 2:
-      /* Oculta*/
-      document.getElementById("c3").style.display = "none";
-      document.getElementById("c4").style.display = "none";
-      document.getElementById("c5").style.display = "none";
 
-      
 
-      break;
+/* Funcion para mostrar la alerta, se creó con un constructor*/
 
-    case 3:
-      /* Oculta*/
+var Alerta = function() {
 
-      document.getElementById("c4").style.display = "none";
-      document.getElementById("c5").style.display = "none";
+    let comida1 = document.getElementById("comida1").value;
+    let comida2 = document.getElementById("comida2").value;
+    let comida3 = document.getElementById("comida3").value;
+    let comida4 = document.getElementById("comida4").value;
+    let comida5 = document.getElementById("comida5").value;
 
-      /* Muestra*/
-      document.getElementById("c3").style.display = "block";
 
-      break;
+    //Este es el constructor para mostrar la alerta y cambiar variables en otra funcion
 
-    case 4:
-      /* Oculta*/
-      document.getElementById("c5").style.display = "none";
+    this.comida = comida1;
 
-      /* Muestra*/
-      document.getElementById("c3").style.display = "block";
-      document.getElementById("c4").style.display = "block";
+    this.setComida = function(comida) {
+        this.comida = comida;
+    }
 
-      break;
+    this.getcomida = function() {
+        return this.comida;
+    }
 
-    case 5:
-      /* Muestra*/
 
-      document.getElementById("c3").style.display = "block";
-      document.getElementById("c4").style.display = "block";
-      document.getElementById("c5").style.display = "block";
-
-      break;
-  }
+    Swal.fire({
+        type: 'question',
+        title: 'Comida Aleatoria',
+        html: 'Su comida estará lista en:  <strong> </strong> segundos',
+        timer: 1500, //tiempo del timer
+        onBeforeOpen: () => {
+            Swal.showLoading()
+            timerInterval = setInterval(() => {
+                Swal.getContent().querySelector('strong')
+                    .textContent = Swal.getTimerLeft()
+            }, 100)
+        },
+        onClose: () => {
+            clearInterval(timerInterval)
+        }
+    }).then((result) => {
+        if (
+            // Read more about handling dismissals
+            result.dismiss === Swal.DismissReason.timer
+        ) {
+            Swal.fire({
+                type: 'success',
+                title: 'Listo!',
+                text: 'Hoy toca comer: ' + this.comida,
+            });
+        }
+    });
 }
-

@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
-body
-{
+body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -9,12 +7,18 @@ body
     color: white;
 }
 
-.box
-{
+div img {
+    align-items: center;
+    
+    height: 250px;
+    padding: 30px;
+}
+
+.box {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50% );
+    transform: translate(-50%, -50%);
     width: 40%;
     height: 100%;
     background: #0f202e;
@@ -24,18 +28,15 @@ body
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 }
 
-.box h2
-{
+.box h2 {
     font-family: 'Lobster', cursive;
     font-size: 30px;
     padding: 0;
     padding-bottom: 25px;
     text-align: center;
-    
 }
 
-.box input
-{
+.box input {
     padding: 10px 0;
     margin-bottom: 30px;
     width: 100%;
@@ -49,72 +50,63 @@ body
     font-size: 15px;
 }
 
-
-.box button
-{
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+.box button {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
-
-.box form div
-{
+.box form div {
     position: relative;
 }
 
-.box form div label
-{
+.box form div label {
     position: absolute;
     top: 15px;
     left: 0;
-   
     transition: 0.5s;
     pointer-events: none;
-
 }
 
-.box input:focus ~ label,
-.box input:valid ~ label
-{
+.box input:focus~label,
+.box input:valid~label {
     top: -8px;
     font-size: 13px;
     color: #bcdcf1ef;
 }
 
-#numeroComidas
-{
+#numeroComidas {
     width: 60px;
     padding-top: 5px;
     padding-bottom: 5px;
-   align-items: center;
-   
-   
+    align-items: center;
 }
 
-.selector
-{
+.selector {
     padding-bottom: 30px;
     align-items: center;
     text-align: center;
-    transform: translate(0%,20%);
-   
+    transform: translate(0%, 20%);
 }
 
-@media screen and (max-width: 800px)
-{
-    .box
-    {
+@media screen and (max-width: 800px) {
+    .box {
         width: 100%;
         height: 100%;
     }
 }
 
-@media screen and (max-height: 400px)
-{
-    .box
-    {
+@media screen and (max-height: 400px) {
+    .box {
         width: 100%;
         height: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    div img {
+        
+        height: 250px;
+        padding: 30px;
     }
 }
